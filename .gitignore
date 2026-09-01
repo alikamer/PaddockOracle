@@ -1,0 +1,21 @@
+# Veri Klasörleri
+data_raw/
+data_processed/
+
+# Kişisel Notlar ve Kurs Materyalleri
+*.xlsx
+Resources-References-Rules-Deadlines/
+CLAUDE.md
+docs/
+
+# Sanal Ortam ve Python Çöpleri
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# IDE ve Sistem Dosyaları
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
