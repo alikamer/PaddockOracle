@@ -1,8 +1,8 @@
 # Veri Klasörleri
-data_raw/
-data_processed/
+
 
 # Kişisel Notlar ve Kurs Materyalleri
+log/
 *.xlsx
 Resources-References-Rules-Deadlines/
 CLAUDE.md

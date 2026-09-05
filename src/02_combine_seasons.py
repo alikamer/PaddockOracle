@@ -2,7 +2,7 @@ import os
 import pandas as pd
 
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DATA_RAW_DIR = os.path.join(PROJECT_ROOT, "data_raw")
+DATA_RAW_DIR = os.path.join(PROJECT_ROOT, "data", "data_raw")
 
 seasons_1950_1990 = pd.read_csv(os.path.join(DATA_RAW_DIR, "results_1950_1990.csv"))
 seasons_1991_2025 = pd.read_csv(os.path.join(DATA_RAW_DIR, "results_1991_2025.csv"))

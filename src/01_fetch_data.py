@@ -144,7 +144,7 @@ def main() -> None:
 
     df = pd.DataFrame(all_rows)
     output_filename = f'results_{START_SEASON}_{END_SEASON}.csv'
-    output_path = os.path.join(PROJECT_ROOT, 'data_raw', output_filename)
+    output_path = os.path.join(PROJECT_ROOT, 'data', 'data_raw', output_filename)
     df.to_csv(output_path, index=False)
     print(f"Bitti. {len(df)} satir '{output_path}' dosyasina kaydedildi.")
 
