@@ -46,7 +46,6 @@ season,round,race_name,circuit_id,date,driver_id,constructor_id,grid,position,po
 2010,2,Australian Grand Prix,albert_park,2010-03-28,buemi,toro_rosso,12,21,R,0.0,0,Collision
 2010,2,Australian Grand Prix,albert_park,2010-03-28,hulkenberg,williams,15,22,R,0.0,0,Collision
 2010,2,Australian Grand Prix,albert_park,2010-03-28,kobayashi,sauber,16,23,R,0.0,0,Collision
-2010,2,Australian Grand Prix,albert_park,2010-03-28,trulli,lotus_racing,20,24,W,0.0,0,Hydraulics
 2010,3,Malaysian Grand Prix,sepang,2010-04-04,vettel,red_bull,3,1,1,25.0,56,Finished
 2010,3,Malaysian Grand Prix,sepang,2010-04-04,webber,red_bull,1,2,2,18.0,56,Finished
 2010,3,Malaysian Grand Prix,sepang,2010-04-04,rosberg,mercedes,2,3,3,15.0,56,Finished
@@ -70,7 +69,6 @@ season,round,race_name,circuit_id,date,driver_id,constructor_id,grid,position,po
 2010,3,Malaysian Grand Prix,sepang,2010-04-04,michael_schumacher,mercedes,8,21,R,0.0,9,Wheel
 2010,3,Malaysian Grand Prix,sepang,2010-04-04,kobayashi,sauber,9,22,R,0.0,8,Engine
 2010,3,Malaysian Grand Prix,sepang,2010-04-04,glock,virgin,16,23,R,0.0,2,Spun off
-2010,3,Malaysian Grand Prix,sepang,2010-04-04,rosa,sauber,12,24,W,0.0,0,Engine
 2010,4,Chinese Grand Prix,shanghai,2010-04-18,button,mclaren,5,1,1,25.0,56,Finished
 2010,4,Chinese Grand Prix,shanghai,2010-04-18,hamilton,mclaren,6,2,2,18.0,56,Finished
 2010,4,Chinese Grand Prix,shanghai,2010-04-18,rosberg,mercedes,4,3,3,15.0,56,Finished
@@ -94,7 +92,6 @@ season,round,race_name,circuit_id,date,driver_id,constructor_id,grid,position,po
 2010,4,Chinese Grand Prix,shanghai,2010-04-18,buemi,toro_rosso,13,21,R,0.0,0,Accident
 2010,4,Chinese Grand Prix,shanghai,2010-04-18,kobayashi,sauber,15,22,R,0.0,0,Accident
 2010,4,Chinese Grand Prix,shanghai,2010-04-18,liuzzi,force_india,18,23,R,0.0,0,Accident
-2010,4,Chinese Grand Prix,shanghai,2010-04-18,glock,virgin,19,24,W,0.0,0,Engine
 2010,5,Spanish Grand Prix,catalunya,2010-05-09,webber,red_bull,1,1,1,25.0,66,Finished
 2010,5,Spanish Grand Prix,catalunya,2010-05-09,alonso,ferrari,4,2,2,18.0,66,Finished
 2010,5,Spanish Grand Prix,catalunya,2010-05-09,vettel,red_bull,2,3,3,15.0,66,Finished
@@ -118,7 +115,6 @@ season,round,race_name,circuit_id,date,driver_id,constructor_id,grid,position,po
 2010,5,Spanish Grand Prix,catalunya,2010-05-09,chandhok,hrt,24,21,R,0.0,27,Suspension
 2010,5,Spanish Grand Prix,catalunya,2010-05-09,rosa,sauber,12,22,R,0.0,18,Collision
 2010,5,Spanish Grand Prix,catalunya,2010-05-09,bruno_senna,hrt,21,23,R,0.0,0,Accident
-2010,5,Spanish Grand Prix,catalunya,2010-05-09,kovalainen,lotus_racing,20,24,W,0.0,0,Gearbox
 2010,6,Monaco Grand Prix,monaco,2010-05-16,webber,red_bull,1,1,1,25.0,78,Finished
 2010,6,Monaco Grand Prix,monaco,2010-05-16,vettel,red_bull,3,2,2,18.0,78,Finished
 2010,6,Monaco Grand Prix,monaco,2010-05-16,kubica,renault,2,3,3,15.0,78,Finished
@@ -548,7 +544,6 @@ season,round,race_name,circuit_id,date,driver_id,constructor_id,grid,position,po
 2011,4,Turkish Grand Prix,istanbul,2011-05-08,karthikeyan,hrt,22,21,21,0.0,55,+3 Laps
 2011,4,Turkish Grand Prix,istanbul,2011-05-08,liuzzi,hrt,20,22,22,0.0,53,+5 Laps
 2011,4,Turkish Grand Prix,istanbul,2011-05-08,resta,force_india,13,23,R,0.0,44,Retired
-2011,4,Turkish Grand Prix,istanbul,2011-05-08,glock,virgin,21,24,W,0.0,0,Gearbox
 2011,5,Spanish Grand Prix,catalunya,2011-05-22,vettel,red_bull,2,1,1,25.0,66,Finished
 2011,5,Spanish Grand Prix,catalunya,2011-05-22,hamilton,mclaren,3,2,2,18.0,66,Finished
 2011,5,Spanish Grand Prix,catalunya,2011-05-22,button,mclaren,5,3,3,15.0,66,Finished
@@ -596,7 +591,6 @@ season,round,race_name,circuit_id,date,driver_id,constructor_id,grid,position,po
 2011,6,Monaco Grand Prix,monaco,2011-05-29,massa,ferrari,6,21,R,0.0,32,Accident
 2011,6,Monaco Grand Prix,monaco,2011-05-29,michael_schumacher,mercedes,5,22,R,0.0,32,Engine
 2011,6,Monaco Grand Prix,monaco,2011-05-29,glock,virgin,20,23,R,0.0,30,Suspension
-2011,6,Monaco Grand Prix,monaco,2011-05-29,perez,sauber,24,24,W,0.0,0,Injury
 2011,7,Canadian Grand Prix,villeneuve,2011-06-12,button,mclaren,7,1,1,25.0,70,Finished
 2011,7,Canadian Grand Prix,villeneuve,2011-06-12,vettel,red_bull,1,2,2,18.0,70,Finished
 2011,7,Canadian Grand Prix,villeneuve,2011-06-12,webber,red_bull,4,3,3,15.0,70,Finished
@@ -1121,7 +1115,6 @@ season,round,race_name,circuit_id,date,driver_id,constructor_id,grid,position,po
 2012,9,British Grand Prix,silverstone,2012-07-08,karthikeyan,hrt,22,21,21,0.0,50,+2 Laps
 2012,9,British Grand Prix,silverstone,2012-07-08,perez,sauber,15,22,R,0.0,11,Collision
 2012,9,British Grand Prix,silverstone,2012-07-08,resta,force_india,10,23,R,0.0,2,Collision
-2012,9,British Grand Prix,silverstone,2012-07-08,petrov,caterham,18,24,W,0.0,0,Engine
 2012,10,German Grand Prix,hockenheimring,2012-07-22,alonso,ferrari,1,1,1,25.0,67,Finished
 2012,10,German Grand Prix,hockenheimring,2012-07-22,button,mclaren,6,2,2,18.0,67,Finished
 2012,10,German Grand Prix,hockenheimring,2012-07-22,raikkonen,lotus_f1,10,3,3,15.0,67,Finished
@@ -1407,7 +1400,6 @@ season,round,race_name,circuit_id,date,driver_id,constructor_id,grid,position,po
 2013,1,Australian Grand Prix,albert_park,2013-03-17,ricciardo,toro_rosso,14,19,R,0.0,39,Hydraulics
 2013,1,Australian Grand Prix,albert_park,2013-03-17,rosberg,mercedes,6,20,R,0.0,26,Electrical
 2013,1,Australian Grand Prix,albert_park,2013-03-17,maldonado,williams,17,21,R,0.0,24,Spun off
-2013,1,Australian Grand Prix,albert_park,2013-03-17,hulkenberg,sauber,11,22,W,0.0,0,Fuel system
 2013,2,Malaysian Grand Prix,sepang,2013-03-24,vettel,red_bull,1,1,1,25.0,56,Finished
 2013,2,Malaysian Grand Prix,sepang,2013-03-24,webber,red_bull,5,2,2,18.0,56,Finished
 2013,2,Malaysian Grand Prix,sepang,2013-03-24,hamilton,mercedes,4,3,3,15.0,56,Finished
@@ -1424,6 +1416,7 @@ season,round,race_name,circuit_id,date,driver_id,constructor_id,grid,position,po
 2013,2,Malaysian Grand Prix,sepang,2013-03-24,pic,caterham,20,14,14,0.0,55,+1 Lap
 2013,2,Malaysian Grand Prix,sepang,2013-03-24,garde,caterham,22,15,15,0.0,55,+1 Lap
 2013,2,Malaysian Grand Prix,sepang,2013-03-24,chilton,marussia,21,16,16,0.0,54,+2 Laps
+2013,2,Malaysian Grand Prix,sepang,2013-03-24,button,mclaren,7,17,17,0.0,53,Withdrew
 2013,2,Malaysian Grand Prix,sepang,2013-03-24,ricciardo,toro_rosso,13,18,18,0.0,51,Retired
 2013,2,Malaysian Grand Prix,sepang,2013-03-24,maldonado,williams,16,19,R,0.0,45,Retired
 2013,2,Malaysian Grand Prix,sepang,2013-03-24,sutil,force_india,8,20,R,0.0,27,Wheel nut
@@ -2108,7 +2101,6 @@ season,round,race_name,circuit_id,date,driver_id,constructor_id,grid,position,po
 2014,14,Singapore Grand Prix,marina_bay,2014-09-21,sutil,sauber,17,19,R,0.0,40,Water pressure
 2014,14,Singapore Grand Prix,marina_bay,2014-09-21,gutierrez,sauber,14,20,R,0.0,17,Electrical
 2014,14,Singapore Grand Prix,marina_bay,2014-09-21,rosberg,mercedes,2,21,R,0.0,13,Electrical
-2014,14,Singapore Grand Prix,marina_bay,2014-09-21,kobayashi,caterham,20,22,W,0.0,0,Power Unit
 2014,15,Japanese Grand Prix,suzuka,2014-10-05,hamilton,mercedes,2,1,1,25.0,44,Finished
 2014,15,Japanese Grand Prix,suzuka,2014-10-05,rosberg,mercedes,1,2,2,18.0,44,Finished
 2014,15,Japanese Grand Prix,suzuka,2014-10-05,vettel,red_bull,9,3,3,15.0,44,Finished
@@ -2242,7 +2234,6 @@ season,round,race_name,circuit_id,date,driver_id,constructor_id,grid,position,po
 2015,2,Malaysian Grand Prix,sepang,2015-03-29,button,mclaren,17,17,R,0.0,41,Turbo
 2015,2,Malaysian Grand Prix,sepang,2015-03-29,alonso,mclaren,18,18,R,0.0,21,ERS
 2015,2,Malaysian Grand Prix,sepang,2015-03-29,ericsson,sauber,9,19,R,0.0,3,Spun off
-2015,2,Malaysian Grand Prix,sepang,2015-03-29,stevens,manor,20,20,W,0.0,0,Fuel system
 2015,3,Chinese Grand Prix,shanghai,2015-04-12,hamilton,mercedes,1,1,1,25.0,56,Finished
 2015,3,Chinese Grand Prix,shanghai,2015-04-12,rosberg,mercedes,2,2,2,18.0,56,Finished
 2015,3,Chinese Grand Prix,shanghai,2015-04-12,vettel,ferrari,3,3,3,15.0,56,Finished
@@ -2282,7 +2273,6 @@ season,round,race_name,circuit_id,date,driver_id,constructor_id,grid,position,po
 2015,4,Bahrain Grand Prix,bahrain,2015-04-19,merhi,manor,19,17,17,0.0,54,+3 Laps
 2015,4,Bahrain Grand Prix,bahrain,2015-04-19,max_verstappen,toro_rosso,15,18,R,0.0,34,Electrical
 2015,4,Bahrain Grand Prix,bahrain,2015-04-19,sainz,toro_rosso,9,19,R,0.0,29,Engine
-2015,4,Bahrain Grand Prix,bahrain,2015-04-19,button,mclaren,20,20,W,0.0,0,ERS
 2015,5,Spanish Grand Prix,catalunya,2015-05-10,rosberg,mercedes,1,1,1,25.0,66,Finished
 2015,5,Spanish Grand Prix,catalunya,2015-05-10,hamilton,mercedes,2,2,2,18.0,66,Finished
 2015,5,Spanish Grand Prix,catalunya,2015-05-10,vettel,ferrari,3,3,3,15.0,66,Finished
@@ -2382,7 +2372,6 @@ season,round,race_name,circuit_id,date,driver_id,constructor_id,grid,position,po
 2015,9,British Grand Prix,silverstone,2015-07-05,grosjean,lotus_f1,12,17,R,0.0,0,Collision
 2015,9,British Grand Prix,silverstone,2015-07-05,maldonado,lotus_f1,14,18,R,0.0,0,Collision
 2015,9,British Grand Prix,silverstone,2015-07-05,button,mclaren,18,19,R,0.0,0,Collision
-2015,9,British Grand Prix,silverstone,2015-07-05,nasr,sauber,16,20,W,0.0,0,Gearbox
 2015,10,Hungarian Grand Prix,hungaroring,2015-07-26,vettel,ferrari,3,1,1,25.0,69,Finished
 2015,10,Hungarian Grand Prix,hungaroring,2015-07-26,kvyat,red_bull,7,2,2,18.0,69,Finished
 2015,10,Hungarian Grand Prix,hungaroring,2015-07-26,ricciardo,red_bull,4,3,3,15.0,69,Finished
@@ -2422,7 +2411,6 @@ season,round,race_name,circuit_id,date,driver_id,constructor_id,grid,position,po
 2015,11,Belgian Grand Prix,spa,2015-08-23,sainz,toro_rosso,10,17,R,0.0,32,Power Unit
 2015,11,Belgian Grand Prix,spa,2015-08-23,ricciardo,red_bull,5,18,R,0.0,19,Power Unit
 2015,11,Belgian Grand Prix,spa,2015-08-23,maldonado,lotus_f1,7,19,R,0.0,2,Engine
-2015,11,Belgian Grand Prix,spa,2015-08-23,hulkenberg,force_india,11,20,W,0.0,0,Power loss
 2015,12,Italian Grand Prix,monza,2015-09-06,hamilton,mercedes,1,1,1,25.0,53,Finished
 2015,12,Italian Grand Prix,monza,2015-09-06,vettel,ferrari,3,2,2,18.0,53,Finished
 2015,12,Italian Grand Prix,monza,2015-09-06,massa,williams,5,3,3,15.0,53,Finished
@@ -2604,7 +2592,6 @@ season,round,race_name,circuit_id,date,driver_id,constructor_id,grid,position,po
 2016,1,Australian Grand Prix,albert_park,2016-03-20,haryanto,manor,22,19,R,0.0,17,Mechanical
 2016,1,Australian Grand Prix,albert_park,2016-03-20,gutierrez,haas,20,20,R,0.0,16,Collision
 2016,1,Australian Grand Prix,albert_park,2016-03-20,alonso,mclaren,11,21,R,0.0,16,Collision
-2016,1,Australian Grand Prix,albert_park,2016-03-20,kvyat,red_bull,18,22,W,0.0,0,Retired
 2016,2,Bahrain Grand Prix,bahrain,2016-04-03,rosberg,mercedes,2,1,1,25.0,57,Finished
 2016,2,Bahrain Grand Prix,bahrain,2016-04-03,raikkonen,ferrari,4,2,2,18.0,57,Finished
 2016,2,Bahrain Grand Prix,bahrain,2016-04-03,hamilton,mercedes,1,3,3,15.0,57,Finished
@@ -2625,8 +2612,6 @@ season,round,race_name,circuit_id,date,driver_id,constructor_id,grid,position,po
 2016,2,Bahrain Grand Prix,bahrain,2016-04-03,sainz,toro_rosso,11,18,R,0.0,29,Retired
 2016,2,Bahrain Grand Prix,bahrain,2016-04-03,gutierrez,haas,13,19,R,0.0,9,Retired
 2016,2,Bahrain Grand Prix,bahrain,2016-04-03,button,mclaren,14,20,R,0.0,6,Power Unit
-2016,2,Bahrain Grand Prix,bahrain,2016-04-03,vettel,ferrari,3,21,W,0.0,0,Engine
-2016,2,Bahrain Grand Prix,bahrain,2016-04-03,jolyon_palmer,renault,19,22,W,0.0,0,Hydraulics
 2016,3,Chinese Grand Prix,shanghai,2016-04-17,rosberg,mercedes,1,1,1,25.0,56,Finished
 2016,3,Chinese Grand Prix,shanghai,2016-04-17,vettel,ferrari,4,2,2,18.0,56,Finished
 2016,3,Chinese Grand Prix,shanghai,2016-04-17,kvyat,red_bull,6,3,3,15.0,56,Finished
@@ -3122,7 +3107,6 @@ season,round,race_name,circuit_id,date,driver_id,constructor_id,grid,position,po
 2017,4,Russian Grand Prix,sochi,2017-04-30,ricciardo,red_bull,5,17,R,0.0,5,Brakes
 2017,4,Russian Grand Prix,sochi,2017-04-30,jolyon_palmer,renault,16,18,R,0.0,0,Collision
 2017,4,Russian Grand Prix,sochi,2017-04-30,grosjean,haas,19,19,R,0.0,0,Collision
-2017,4,Russian Grand Prix,sochi,2017-04-30,alonso,mclaren,15,20,W,0.0,0,Power Unit
 2017,5,Spanish Grand Prix,catalunya,2017-05-14,hamilton,mercedes,1,1,1,25.0,66,Finished
 2017,5,Spanish Grand Prix,catalunya,2017-05-14,vettel,ferrari,2,2,2,18.0,66,Finished
 2017,5,Spanish Grand Prix,catalunya,2017-05-14,ricciardo,red_bull,6,3,3,15.0,66,Finished
@@ -4222,6 +4206,7 @@ season,round,race_name,circuit_id,date,driver_id,constructor_id,grid,position,po
 2019,18,Mexican Grand Prix,rodriguez,2019-10-27,grosjean,haas,18,17,17,0.0,69,+2 Laps
 2019,18,Mexican Grand Prix,rodriguez,2019-10-27,kubica,williams,20,18,18,0.0,69,+2 Laps
 2019,18,Mexican Grand Prix,rodriguez,2019-10-27,raikkonen,alfa,14,19,R,0.0,58,Overheating
+2019,18,Mexican Grand Prix,rodriguez,2019-10-27,norris,mclaren,8,20,W,0.0,48,Withdrew
 2019,19,United States Grand Prix,americas,2019-11-03,bottas,mercedes,1,1,1,25.0,56,Finished
 2019,19,United States Grand Prix,americas,2019-11-03,hamilton,mercedes,5,2,2,18.0,56,Finished
 2019,19,United States Grand Prix,americas,2019-11-03,max_verstappen,red_bull,3,3,3,15.0,56,Finished
@@ -4361,7 +4346,6 @@ season,round,race_name,circuit_id,date,driver_id,constructor_id,grid,position,po
 2020,4,British Grand Prix,silverstone,2020-08-02,raikkonen,alfa,16,17,17,0.0,51,+1 Lap
 2020,4,British Grand Prix,silverstone,2020-08-02,kvyat,alphatauri,19,18,R,0.0,11,Accident
 2020,4,British Grand Prix,silverstone,2020-08-02,kevin_magnussen,haas,14,19,R,0.0,1,Collision
-2020,4,British Grand Prix,silverstone,2020-08-02,hulkenberg,racing_point,13,20,W,0.0,0,Power Unit
 2020,5,70th Anniversary Grand Prix,silverstone,2020-08-09,max_verstappen,red_bull,4,1,1,25.0,52,Finished
 2020,5,70th Anniversary Grand Prix,silverstone,2020-08-09,hamilton,mercedes,2,2,2,19.0,52,Finished
 2020,5,70th Anniversary Grand Prix,silverstone,2020-08-09,bottas,mercedes,1,3,3,15.0,52,Finished
@@ -4421,7 +4405,6 @@ season,round,race_name,circuit_id,date,driver_id,constructor_id,grid,position,po
 2020,7,Belgian Grand Prix,spa,2020-08-30,kevin_magnussen,haas,20,17,17,0.0,44,Finished
 2020,7,Belgian Grand Prix,spa,2020-08-30,giovinazzi,alfa,18,18,R,0.0,9,Accident
 2020,7,Belgian Grand Prix,spa,2020-08-30,russell,williams,15,19,R,0.0,9,Debris
-2020,7,Belgian Grand Prix,spa,2020-08-30,sainz,mclaren,7,20,W,0.0,0,Exhaust
 2020,8,Italian Grand Prix,monza,2020-09-06,gasly,alphatauri,10,1,1,25.0,53,Finished
 2020,8,Italian Grand Prix,monza,2020-09-06,sainz,mclaren,3,2,2,18.0,53,Finished
 2020,8,Italian Grand Prix,monza,2020-09-06,stroll,racing_point,8,3,3,15.0,53,Finished
@@ -4558,6 +4541,7 @@ season,round,race_name,circuit_id,date,driver_id,constructor_id,grid,position,po
 2020,14,Turkish Grand Prix,istanbul,2020-11-15,bottas,mercedes,9,14,14,0.0,57,+1 Lap
 2020,14,Turkish Grand Prix,istanbul,2020-11-15,raikkonen,alfa,8,15,15,0.0,57,+1 Lap
 2020,14,Turkish Grand Prix,istanbul,2020-11-15,russell,williams,20,16,16,0.0,57,+1 Lap
+2020,14,Turkish Grand Prix,istanbul,2020-11-15,kevin_magnussen,haas,13,17,17,0.0,55,Withdrew
 2020,14,Turkish Grand Prix,istanbul,2020-11-15,grosjean,haas,17,18,R,0.0,49,Collision damage
 2020,14,Turkish Grand Prix,istanbul,2020-11-15,latifi,williams,21,19,R,0.0,39,Collision damage
 2020,14,Turkish Grand Prix,istanbul,2020-11-15,giovinazzi,alfa,10,20,R,0.0,11,Gearbox
@@ -4720,7 +4704,6 @@ season,round,race_name,circuit_id,date,driver_id,constructor_id,grid,position,po
 2021,5,Monaco Grand Prix,monaco,2021-05-23,mazepin,haas,19,17,17,0.0,75,+3 Laps
 2021,5,Monaco Grand Prix,monaco,2021-05-23,mick_schumacher,haas,20,18,18,0.0,75,+3 Laps
 2021,5,Monaco Grand Prix,monaco,2021-05-23,bottas,mercedes,3,19,R,0.0,29,Wheel nut
-2021,5,Monaco Grand Prix,monaco,2021-05-23,leclerc,ferrari,1,20,W,0.0,0,Driveshaft
 2021,6,Azerbaijan Grand Prix,baku,2021-06-06,perez,red_bull,6,1,1,25.0,51,Finished
 2021,6,Azerbaijan Grand Prix,baku,2021-06-06,vettel,aston_martin,11,2,2,18.0,51,Finished
 2021,6,Azerbaijan Grand Prix,baku,2021-06-06,gasly,alphatauri,4,3,3,15.0,51,Finished
@@ -4900,7 +4883,6 @@ season,round,race_name,circuit_id,date,driver_id,constructor_id,grid,position,po
 2021,14,Italian Grand Prix,monza,2021-09-12,hamilton,mercedes,4,17,R,0.0,25,Collision
 2021,14,Italian Grand Prix,monza,2021-09-12,max_verstappen,red_bull,1,18,R,0.0,25,Collision
 2021,14,Italian Grand Prix,monza,2021-09-12,gasly,alphatauri,20,19,R,0.0,3,Suspension
-2021,14,Italian Grand Prix,monza,2021-09-12,tsunoda,alphatauri,21,20,W,0.0,0,Brakes
 2021,15,Russian Grand Prix,sochi,2021-09-26,hamilton,mercedes,4,1,1,25.0,53,Finished
 2021,15,Russian Grand Prix,sochi,2021-09-26,max_verstappen,red_bull,20,2,2,18.0,53,Finished
 2021,15,Russian Grand Prix,sochi,2021-09-26,sainz,ferrari,2,3,3,15.0,53,Finished
@@ -5060,7 +5042,6 @@ season,round,race_name,circuit_id,date,driver_id,constructor_id,grid,position,po
 2021,22,Abu Dhabi Grand Prix,yas_marina,2021-12-12,giovinazzi,alfa,14,17,R,0.0,33,Gearbox
 2021,22,Abu Dhabi Grand Prix,yas_marina,2021-12-12,russell,williams,17,18,R,0.0,26,Gearbox
 2021,22,Abu Dhabi Grand Prix,yas_marina,2021-12-12,raikkonen,alfa,18,19,R,0.0,25,Brakes
-2021,22,Abu Dhabi Grand Prix,yas_marina,2021-12-12,mazepin,haas,20,20,W,0.0,0,Illness
 2022,1,Bahrain Grand Prix,bahrain,2022-03-20,leclerc,ferrari,1,1,1,26.0,57,Finished
 2022,1,Bahrain Grand Prix,bahrain,2022-03-20,sainz,ferrari,3,2,2,18.0,57,Finished
 2022,1,Bahrain Grand Prix,bahrain,2022-03-20,hamilton,mercedes,5,3,3,15.0,57,Finished
@@ -5779,7 +5760,6 @@ season,round,race_name,circuit_id,date,driver_id,constructor_id,grid,position,po
 2023,14,Italian Grand Prix,monza,2023-09-03,hulkenberg,haas,13,17,17,0.0,50,Lapped
 2023,14,Italian Grand Prix,monza,2023-09-03,kevin_magnussen,haas,19,18,18,0.0,50,Lapped
 2023,14,Italian Grand Prix,monza,2023-09-03,ocon,alpine,18,19,R,0.0,39,Retired
-2023,14,Italian Grand Prix,monza,2023-09-03,tsunoda,alphatauri,11,20,W,0.0,0,Did not start
 2023,15,Singapore Grand Prix,marina_bay,2023-09-17,sainz,ferrari,1,1,1,25.0,62,Finished
 2023,15,Singapore Grand Prix,marina_bay,2023-09-17,norris,mclaren,4,2,2,18.0,62,Finished
 2023,15,Singapore Grand Prix,marina_bay,2023-09-17,hamilton,mercedes,5,3,3,16.0,62,Finished
@@ -5838,7 +5818,6 @@ season,round,race_name,circuit_id,date,driver_id,constructor_id,grid,position,po
 2023,17,Qatar Grand Prix,losail,2023-10-08,lawson,alphatauri,17,17,17,0.0,56,Lapped
 2023,17,Qatar Grand Prix,losail,2023-10-08,sargeant,williams,15,18,R,0.0,40,Retired
 2023,17,Qatar Grand Prix,losail,2023-10-08,hamilton,mercedes,3,19,R,0.0,0,Retired
-2023,17,Qatar Grand Prix,losail,2023-10-08,sainz,ferrari,12,20,W,0.0,0,Did not start
 2023,18,United States Grand Prix,americas,2023-10-22,max_verstappen,red_bull,6,1,1,25.0,56,Finished
 2023,18,United States Grand Prix,americas,2023-10-22,norris,mclaren,2,2,2,18.0,56,Finished
 2023,18,United States Grand Prix,americas,2023-10-22,sainz,ferrari,4,3,3,15.0,56,Finished
@@ -5876,6 +5855,7 @@ season,round,race_name,circuit_id,date,driver_id,constructor_id,grid,position,po
 2023,19,Mexico City Grand Prix,rodriguez,2023-10-29,bottas,alfa,9,15,15,0.0,71,Finished
 2023,19,Mexico City Grand Prix,rodriguez,2023-10-29,sargeant,williams,19,16,16,0.0,70,Retired
 2023,19,Mexico City Grand Prix,rodriguez,2023-10-29,stroll,aston_martin,20,17,17,0.0,66,Collision damage
+2023,19,Mexico City Grand Prix,rodriguez,2023-10-29,alonso,aston_martin,13,18,W,0.0,47,Withdrew
 2023,19,Mexico City Grand Prix,rodriguez,2023-10-29,kevin_magnussen,haas,16,19,R,0.0,31,Accident
 2023,19,Mexico City Grand Prix,rodriguez,2023-10-29,perez,red_bull,5,20,R,0.0,1,Collision damage
 2023,20,São Paulo Grand Prix,interlagos,2023-11-05,max_verstappen,red_bull,1,1,1,25.0,71,Finished
@@ -5897,7 +5877,6 @@ season,round,race_name,circuit_id,date,driver_id,constructor_id,grid,position,po
 2023,20,São Paulo Grand Prix,interlagos,2023-11-05,zhou,alfa,20,17,R,0.0,22,Retired
 2023,20,São Paulo Grand Prix,interlagos,2023-11-05,kevin_magnussen,haas,12,18,R,0.0,0,Retired
 2023,20,São Paulo Grand Prix,interlagos,2023-11-05,albon,williams,13,19,R,0.0,0,Retired
-2023,20,São Paulo Grand Prix,interlagos,2023-11-05,leclerc,ferrari,2,20,W,0.0,0,Did not start
 2023,21,Las Vegas Grand Prix,vegas,2023-11-19,max_verstappen,red_bull,2,1,1,25.0,50,Finished
 2023,21,Las Vegas Grand Prix,vegas,2023-11-19,leclerc,ferrari,1,2,2,18.0,50,Finished
 2023,21,Las Vegas Grand Prix,vegas,2023-11-19,perez,red_bull,11,3,3,15.0,50,Finished
@@ -6176,7 +6155,6 @@ season,round,race_name,circuit_id,date,driver_id,constructor_id,grid,position,po
 2024,12,British Grand Prix,silverstone,2024-07-07,perez,red_bull,20,17,17,0.0,50,Lapped
 2024,12,British Grand Prix,silverstone,2024-07-07,zhou,sauber,14,18,18,0.0,50,Lapped
 2024,12,British Grand Prix,silverstone,2024-07-07,russell,mercedes,1,19,R,0.0,33,Retired
-2024,12,British Grand Prix,silverstone,2024-07-07,gasly,alpine,19,20,W,0.0,0,Did not start
 2024,13,Hungarian Grand Prix,hungaroring,2024-07-21,piastri,mclaren,2,1,1,25.0,70,Finished
 2024,13,Hungarian Grand Prix,hungaroring,2024-07-21,norris,mclaren,1,2,2,18.0,70,Finished
 2024,13,Hungarian Grand Prix,hungaroring,2024-07-21,hamilton,mercedes,5,3,3,15.0,70,Finished
@@ -6354,8 +6332,6 @@ season,round,race_name,circuit_id,date,driver_id,constructor_id,grid,position,po
 2024,21,São Paulo Grand Prix,interlagos,2024-11-03,zhou,sauber,19,15,15,0.0,69,Finished
 2024,21,São Paulo Grand Prix,interlagos,2024-11-03,sainz,ferrari,20,16,R,0.0,38,Retired
 2024,21,São Paulo Grand Prix,interlagos,2024-11-03,colapinto,williams,16,17,R,0.0,30,Retired
-2024,21,São Paulo Grand Prix,interlagos,2024-11-03,albon,williams,7,18,W,0.0,0,Did not start
-2024,21,São Paulo Grand Prix,interlagos,2024-11-03,stroll,aston_martin,10,19,W,0.0,0,Did not start
 2024,21,São Paulo Grand Prix,interlagos,2024-11-03,hulkenberg,haas,18,20,D,0.0,0,Disqualified
 2024,22,Las Vegas Grand Prix,vegas,2024-11-23,russell,mercedes,1,1,1,25.0,50,Finished
 2024,22,Las Vegas Grand Prix,vegas,2024-11-23,hamilton,mercedes,10,2,2,18.0,50,Finished
@@ -6635,7 +6611,6 @@ season,round,race_name,circuit_id,date,driver_id,constructor_id,grid,position,po
 2025,11,Austrian Grand Prix,red_bull_ring,2025-06-29,albon,williams,12,17,R,0.0,15,Retired
 2025,11,Austrian Grand Prix,red_bull_ring,2025-06-29,max_verstappen,red_bull,7,18,R,0.0,0,Retired
 2025,11,Austrian Grand Prix,red_bull_ring,2025-06-29,antonelli,mercedes,9,19,R,0.0,0,Retired
-2025,11,Austrian Grand Prix,red_bull_ring,2025-06-29,sainz,williams,19,20,W,0.0,0,Did not start
 2025,12,British Grand Prix,silverstone,2025-07-06,norris,mclaren,3,1,1,25.0,52,Finished
 2025,12,British Grand Prix,silverstone,2025-07-06,piastri,mclaren,2,2,2,18.0,52,Finished
 2025,12,British Grand Prix,silverstone,2025-07-06,hulkenberg,sauber,19,3,3,15.0,52,Finished
@@ -6655,7 +6630,6 @@ season,round,race_name,circuit_id,date,driver_id,constructor_id,grid,position,po
 2025,12,British Grand Prix,silverstone,2025-07-06,hadjar,rb,12,17,R,0.0,17,Retired
 2025,12,British Grand Prix,silverstone,2025-07-06,bortoleto,sauber,16,18,R,0.0,3,Retired
 2025,12,British Grand Prix,silverstone,2025-07-06,lawson,rb,15,19,R,0.0,0,Retired
-2025,12,British Grand Prix,silverstone,2025-07-06,colapinto,alpine,20,20,W,0.0,0,Did not start
 2025,13,Belgian Grand Prix,spa,2025-07-27,piastri,mclaren,2,1,1,25.0,44,Finished
 2025,13,Belgian Grand Prix,spa,2025-07-27,norris,mclaren,1,2,2,18.0,44,Finished
 2025,13,Belgian Grand Prix,spa,2025-07-27,leclerc,ferrari,3,3,3,15.0,44,Finished
@@ -6735,7 +6709,6 @@ season,round,race_name,circuit_id,date,driver_id,constructor_id,grid,position,po
 2025,16,Italian Grand Prix,monza,2025-09-07,colapinto,alpine,17,17,17,0.0,52,Lapped
 2025,16,Italian Grand Prix,monza,2025-09-07,stroll,aston_martin,16,18,18,0.0,52,Lapped
 2025,16,Italian Grand Prix,monza,2025-09-07,alonso,aston_martin,8,19,R,0.0,24,Retired
-2025,16,Italian Grand Prix,monza,2025-09-07,hulkenberg,sauber,12,20,W,0.0,0,Did not start
 2025,17,Azerbaijan Grand Prix,baku,2025-09-21,max_verstappen,red_bull,1,1,1,25.0,51,Finished
 2025,17,Azerbaijan Grand Prix,baku,2025-09-21,russell,mercedes,5,2,2,18.0,51,Finished
 2025,17,Azerbaijan Grand Prix,baku,2025-09-21,sainz,williams,2,3,3,15.0,51,Finished
