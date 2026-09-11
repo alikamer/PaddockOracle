@@ -2,12 +2,12 @@
 import pandas as pd
 
 # %%
-eski = pd.read_csv("data/data_raw/results_1950_1990.csv")
-yeni = pd.read_csv("data/data_raw/results_1991_2025.csv")
+old = pd.read_csv("data/data_raw/results_1950_1990.csv")
+new = pd.read_csv("data/data_raw/results_1991_2025.csv")
 
 # %%
-combined = pd.concat([eski, yeni], ignore_index=True)
-print(f"{len(eski)} + {len(yeni)} = {len(combined)} satir")
+combined = pd.concat([old, new], ignore_index=True)
+print(f"{len(old)} + {len(new)} = {len(combined)} satir")
 
 # %%
 output_path = "data/data_raw/results_all_seasons.csv"
