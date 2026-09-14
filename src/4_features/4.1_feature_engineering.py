@@ -12,15 +12,15 @@ pd.set_option('display.width',500)
 pd.set_option('display.max_rows', None)
 
 
-# Hedef degisken: podyuma girdi mi (ilk 3)
+# Hedef değişken: podyuma girdi mi (ilk 3)
 df["is_podium"] = (df["position"] <= 3).astype(int)
 df.groupby('driver_id')['position'].transform(lambda s: s.shift(1).rolling(3).mean())
 
 # %%
-# Yardimci fonksiyonlar — her yeni feature'dan sonra cagrilir.
-# Hesap yapan fonksiyonlar degil, sadece bakis/dogrulama araclari.
+# Yardımcı fonksiyonlar — her yeni feature'dan sonra çağrılır.
+# Hesap yapan fonksiyonlar değil, sadece bakış/doğrulama araçları.
 
-sns.set_theme(style="whitegrid")  # seaborn'un hazir temasi: silik izgara, ince cerceve
+sns.set_theme(style="whitegrid")  # seaborn'un hazır teması: silik ızgara, ince çerçeve
 
 
 def feature_summary(dataframe, col, target="is_podium", bins=5, plot=False):
@@ -72,7 +72,7 @@ def feature_summary(dataframe, col, target="is_podium", bins=5, plot=False):
 
 
 def feature_vs_position(dataframe, col):
-    # Dagilim + regresyon dogrusu: feature buyudukce bitis pozisyonu ne oluyor?
+    # Dağılım + regresyon doğrusu: feature büyüdükçe bitiş pozisyonu ne oluyor?
     plt.figure(figsize=(8, 6))
     sns.regplot(
         data=dataframe.dropna(subset=[col]),
@@ -100,7 +100,7 @@ def correlation_matrix(dataframe, cols):
 
 
 def driver_timeline(dataframe, driver_id, cols):
-    # Sadece pozisyon olcegindeki sutunlar icin anlamli (rolling_form gibi).
+    # Sadece pozisyon ölçeğindeki sütunlar için anlamlı (rolling_form gibi).
     driver = dataframe[dataframe["driver_id"] == driver_id]
 
     plt.figure(figsize=(14, 5))
@@ -119,7 +119,7 @@ def driver_timeline(dataframe, driver_id, cols):
 
 
 # %%
-# Takim ismi birlestirme (toro_rosso->alphatauri->rb gibi zincirler)
+# Takım ismi birleştirme (toro_rosso->alphatauri->rb gibi zincirler)
 
 #Burada ufak bir sorunumuz var düzeltmemiz gerekmekte
 #constructor_id isimli sütunda takımın marka bilgisi tutulmakta, fakat yıllar içerisinde bazı takımlar bazı sebeplerden(satılma,sponsor vs) ötürü isim değiştirmiş oysa ki takım aynı takım
@@ -143,7 +143,7 @@ def driver_timeline(dataframe, driver_id, cols):
 '''
 #ferrari, mclaren, mercedes, red_bull, williams, haas, hrt, Bu takımlar tarih boyunca ( en azından 2010-25) aralığında isim değiştirmemiş, raw olarak bırakılabilir
 
-# Adim 1
+# Adım 1
 #Nasıl çözeceğiz bu sorunu?
 '''
 
@@ -170,7 +170,7 @@ team_name_map = {
 
 
 
-# Adim 2
+# Adım 2
 #sözlüğü uygulayıp team_unified sütununu açalım
 '''kodun işlevi
 Adım 1 — df['constructor_id']
@@ -250,7 +250,7 @@ Dolayısıyla bunu feature engineering ile üretip modele kazandırmamız elzemd
 
 '''
 
-# Adim 1
+# Adım 1
 # Elimizdeki tablo şu an satır satır (her yarış-pilot kombinasyonu bir satır) duruyor ama kronolojik sırada değil — CSV'de hangi sırada geldiyse öyle duruyor.
 # "Son 3 yarış" hesaplayabilmek için önce her pilotun kendi yarışlarını zaman sırasına göre dizmemiz lazım.
 '''
@@ -323,19 +323,19 @@ df[df['driver_id'] == 'alonso'].head(50)
 
 #Oluşturduğumuz Rolling Form feature'u ne kadar etkili görelim
 
-# Bosluk + dagilim + form araligina gore podyum orani (tablo ve grafik)
+# Boşluk + dağılım + form aralığına göre podyum oranı (tablo ve grafik)
 feature_summary(df, "rolling_form", plot=True)
 
-# Dagilim bulutu + egilim dogrusu
+# Dağılım bulutu + eğilim doğrusu
 feature_vs_position(df, "rolling_form")
 
-# Tek pilotun kariyeri uzerinde feature ile gercek sonucun karsilastirmasi
+# Tek pilotun kariyeri üzerinde feature ile gerçek sonucun karşılaştırması
 driver_timeline(df, "alonso", ["rolling_form"])
 
 
 
-# Not: correlation_matrix tek feature'la anlamsiz, en sondaki kontrol blogunda
-# tum turetilmis sutunlar birden verilecek.
+# Not: correlation_matrix tek feature'la anlamsız, en sondaki kontrol bloğunda
+# tüm türetilmiş sütunlar birden verilecek.
 
 
 
@@ -343,7 +343,7 @@ driver_timeline(df, "alonso", ["rolling_form"])
 
 
 # %%
-# 2. Sezon kumulatif puani
+# 2. Sezon kümülatif puanı
 '''
 Rolling form son 3 yarisa bakiyor, yani kisa vadeli bir sinyal. Ama bir pilotun o sezon ne kadar
 guclu oldugunu 3 yaris anlatmaz - sezon boyunca biriktirdigi puan anlatir. 10. yarista 200 puani
@@ -358,8 +358,8 @@ kullandigimiz onceki yarislarin puani - yaristan once elimizde olan bir bilgi. s
 olarak bu ayrimi sagliyor.
 '''
 
-# Adim 1
-# Nasil hesaplayacagiz?
+# Adım 1
+# Nasıl hesaplayacağız?
 '''
 Adim 1 - Gruplama: driver_id VE season birlikte. Puanlar her sezon sifirlaniyor, 2023'un puani
 2024'e tasinmaz. Tek basina driver_id'ye gruplarsak tum kariyer boyunca toplamaya devam eder.
@@ -389,7 +389,7 @@ feature_vs_position(df, "season_points")
 
 
 # %%
-# 3. Takim son formu
+# 3. Takım son formu
 '''
 Rolling form pilota bakiyor, bu takima. Bir pilotun sonucu buyuk olcude arabasinin
 gucune bagli - takimin son 3 yaristaki ortalama bitis sirasi o gucun olcusu.
@@ -402,10 +402,10 @@ Dikkat edilecek nokta: bu ikisinin birbiriyle korelasyonu 0.89, yani buyuk olcud
 ayni seyi olcuyorlar. Yine de ikisini de tutuyoruz, gerekcesi yukaridaki bosluk isi.
 '''
 
-# Adim 1
-# Once her takimin her yaristaki ortalama sirasini cikariyoruz (iki aracin ortalamasi),
-# pencereyi ondan sonra uyguluyoruz. Dogrudan satir uzerinden yapamayiz: ayni yarista
-# ayni takimdan iki satir var, "son 3 yaris" penceresi her yarisi iki kez sayardi.
+# Adım 1
+# Önce her takımın her yarıştaki ortalama sırasını çıkarıyoruz (iki aracın ortalaması),
+# pencereyi ondan sonra uyguluyoruz. Doğrudan satır üzerinden yapamayız: aynı yarışta
+# aynı takımdan iki satır var, "son 3 yarış" penceresi her yarışı iki kez sayardı.
 
 team = (df.groupby(['team_unified', 'season', 'round'], as_index=False)['position'].mean()
            .sort_values(['team_unified', 'season', 'round']))
@@ -416,14 +416,14 @@ team['team_form'] = team.groupby('team_unified')['position'].transform(
 ####################df = df.merge(team[['team_unified', 'season', 'round', 'team_form']],    ################## dikkat!!
               on=['team_unified', 'season', 'round'], how='left')
 
-df = df.sort_values(['driver_id', 'season', 'round']).reset_index(drop=True)  # merge sirayi bozdu
+df = df.sort_values(['driver_id', 'season', 'round']).reset_index(drop=True)  # merge sırayı bozdu
 df.head()
 feature_summary(df, "team_form", plot=True)
 feature_vs_position(df, "team_form")
 
 
 # %%
-# 4. Pist gecmisi
+# 4. Pist geçmişi
 '''
 Bazi pilotlar belli pistlerde istikrarli sekilde iyi. Monaco gibi teknik pistlerde
 pilotun kendisi, Monza gibi guc pistlerinde araba one cikar - yani pist pilot-araba
@@ -520,7 +520,7 @@ circuit_history_strength(df, "circuit_history")
 
 
 # %%
-# 5. Takim arkadasi farki
+# 5. Takım arkadaşı farkı
 '''
 Ayni yarista, ayni arabayi kullanan iki pilot var. Aralarindaki fark arabadan
 gelemez, pilottan gelir. Bu yuzden bu sutun elimizdeki en temiz "saf pilot yetenegi"
@@ -534,10 +534,10 @@ isi, takim arkadasini yenmek tek basina podyuma yetmiyor. Yine de degerli, cunku
 araba gucunden bagimsiz tek sinyalimiz bu.
 '''
 
-# Adim 1
-# Takim arkadasinin sirasini ayri bir tablo kurmadan buluyoruz: ayni yarista ayni
-# takimdan iki satir varsa, ortalamanin iki kati eksi kendi sirasi otekinin sirasidir.
-# Tek arac cikaran takimlarda (veride 44 yaris) takim arkadasi yok, orasi bos kalir.
+# Adım 1
+# Takım arkadaşının sırasını ayrı bir tablo kurmadan buluyoruz: aynı yarışta aynı
+# takımdan iki satır varsa, ortalamanın iki katı eksi kendi sırası otekinin sırasıdır.
+# Tek araç çıkaran takımlarda (veride 44 yarış) takım arkadaşı yok, orasi boş kalir.
 
 car_count = df.groupby(['team_unified', 'season', 'round'])['position'].transform('size')
 team_avg = df.groupby(['team_unified', 'season', 'round'])['position'].transform('mean')
@@ -593,7 +593,7 @@ Tek araçlı takımlarda (Williams, Albon örneği gibi) takım arkadaşı yok, 
 
 
 # %%
-# 6. Ariza orani
+# 6. Arıza oranı
 '''
 Yarisi bitiremeyen pilot podyuma cikamaz. Bu sutun pilotun gecmiste ne siklikta
 bitiremedigini tutuyor.
@@ -615,7 +615,7 @@ feature_summary(df, "dnf_rate", plot=True)
 
 
 # %%
-# 7. Grid-bitis farki
+# 7. Grid-bitiş farkı
 '''
 Pilot basladigi yerden kac sira kazaniyor? grid - position pozitifse ileri tirmanmis,
 negatifse gerilemis. Gecmis ortalamasi pilotun yaris ici verimini gosterir.
@@ -646,7 +646,7 @@ feature_vs_position(df, "grid_gain")
 '''
 
 # %%
-# Caylak pilot stratejisi (gecmissiz satirlarin doldurulmasi)
+# Çaylak pilot stratejisi (geçmişsiz satırların doldurulması)
 '''
 Turetilen sutunlarin hepsi gecmise bakiyor, dolayisiyla gecmisi olmayan satirlarda
 bos kaliyorlar. En buyuk bosluk pist gecmisinde (%27), en kucugu sezon puaninda (sifir).
@@ -681,7 +681,7 @@ feature_summary(df, "career_races", bins=8, plot=True)
 
 
 # %%
-# Kolon sayisi kontrolu + kaydetme
+# Kolon sayısı kontrolü + kaydetme
 '''
 Son kontrol. Uc soru soruyoruz: yardimci sutunlar temizlendi mi, sizinti sutunlari
 modele girmiyor mu, kriterin istedigi feature sayisina ulastik mi (min 10, ideal 15-30).
@@ -689,15 +689,15 @@ modele girmiyor mu, kriterin istedigi feature sayisina ulastik mi (min 10, ideal
 
 df = df.drop(columns=[col for col in df.columns if col.startswith('_')])
 
-# Yaristan SONRA olusan sutunlar. Modele girdi olarak asla verilmeyecek
-# (karar defteri, 02.09.2026). position sadece hedef degiskeni turetmek icin kullanildi.
+# Yarıştan SONRA oluşan sütunlar. Modele girdi olarak asla verilmeyecek
+# (karar defteri, 02.09.2026). position sadece hedef değişkeni türetmek için kullanıldı.
 leakage_cols = ['position', 'position_text', 'points', 'laps', 'status']
 
-# Yaristan ONCE bilinen her sey modele girebilir.
+# Yarıştan ÖNCE bilinen her şey modele girebilir.
 numeric_cols = ['grid', 'rolling_form', 'season_points', 'team_form', 'circuit_history',
                     'teammate_delta', 'dnf_rate', 'grid_gain', 'career_races', 'season', 'round']
-# driver_id bilerek yok: karar defterinde kimlik sutunlarina one-hot yapilmayacak
-# yaziyor (83 pilot = 83 sutun). Pilotun kimligi yerine davranisi duruyor:
+# driver_id bilerek yok: karar defterinde kimlik sütunlarına one-hot yapılmayacak
+# yazıyor (83 pilot = 83 sütun). Pilotun kimliği yerine davranışı duruyor:
 # rolling_form, career_races, teammate_delta, grid_gain, dnf_rate.
 categorical_cols = ['team_unified', 'circuit_id']
 model_cols = numeric_cols + categorical_cols
@@ -711,7 +711,7 @@ print(f"{len(df)} satir | {len(model_cols)} model sutunu | {len(df.columns)} top
 print(f"podyum orani: %{100 * df['is_podium'].mean():.1f}")
 print(f"sayisal {len(numeric_cols)}, kategorik {len(categorical_cols)}")
 
-# Turetilen sutunlar birbirini tekrar ediyor mu? (rolling_form <-> team_form'u burada gor)
+# Türetilen sütunlar birbirini tekrar ediyor mu? (rolling_form <-> team_form'u burada gor)
 correlation_matrix(df, numeric_cols + ['is_podium'])
 
 output_path = "data/data_processed/results_2010_2025_features.csv"

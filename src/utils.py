@@ -14,6 +14,7 @@ team_name_map = {
     'renault': 'alpine',
     'lotus_f1': 'alpine',
     'alfa': 'sauber',
+    'audi': 'sauber',
     'lotus_racing': 'caterham',
     'virgin': 'manor',
     'marussia': 'manor',
@@ -21,14 +22,10 @@ team_name_map = {
 
 
 
-#add_features — az önce konuştuğumuz, 7 türetilmiş özelliği (rolling_form, team_form, vb.) hesaplayan fonksiyon.
-# Şu an hiçbir yerden çağrılmıyor, henüz kullanılmadı. İleride 5.3_prediction.
-# py içinde kullanılacak: yeni bir yarış geldiğinde, geçmiş veriye eklenip bu fonksiyondan geçirilecek.
+# 4.1_feature_engineering.py'daki yedi özelliğin fonksiyon hali. Yeni bir
+# yarışın satırları geçmiş veriye eklenip buradan geçirilmeli; rolling ve
+# expanding hesaplar ancak böyle gerçek geçmişe bakabilir.
 def add_features(dataframe):
-    # 4_features/4.1_feature_engineering.py'daki hesaplamanin fonksiyona
-    # tasinmis hali. Yeni bir yaris tahmin edilecekse, o yarisin satiri
-    # gecmis veriye eklenip bu fonksiyondan gecirilmeli - boylece rolling/
-    # expanding hesaplar gercek gecmise bakabilir.
     df = dataframe.sort_values(['driver_id', 'season', 'round']).reset_index(drop=True)
 
     df['team_unified'] = df['constructor_id'].map(team_name_map).fillna(df['constructor_id'])
@@ -82,10 +79,9 @@ def add_features(dataframe):
 
 #-------------------------------------
 
-#f1_data_prep — eğitim ve tahmin için veriyi son hâline getiren fonksiyon. Girdi olarak, üzerinde zaten add_features çalışmış (7 özellik hesaplanmış) bir tablo bekliyor.
-#İçeride şunu yapıyor: hedef sütunu (is_podium) ayırıyor, modele girmemesi gereken sütunları (position, points, pilot/takım isimleri gibi kimlik sütunları) atıyor,
-# team_unified'ı one_hot_encoder ile 0/1'e çeviriyor. Şu an 5.2_pipeline.py içinden çağrılıyor, eğitimde kullanıldı.
-# İleride 5.3_prediction.py de aynısını çağıracak, tahmin öncesi.
+# Modele girecek X ile hedef y'yi ayırır: sızıntı ve kimlik sütunlarını
+# atar, team_unified'ı one-hot'a çevirir. Girdi add_features'tan geçmiş
+# bir tablo olmalı.
 def f1_data_prep(dataframe):
     leak_cols = ["position", "position_text", "points", "laps", "status"]
     id_cols = ["driver_id", "constructor_id", "circuit_id", "race_name", "date"]

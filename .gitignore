@@ -7,6 +7,7 @@ log/
 Resources-References-Rules-Deadlines/
 CLAUDE.md
 docs/
+app.py
 
 # Sanal Ortam ve Python Çöpleri
 .venv/

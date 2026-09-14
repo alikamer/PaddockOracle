@@ -6,8 +6,8 @@ df = pd.read_csv("data/data_raw/results_all_seasons.csv")
 print(f"Girdi: {len(df)} satir, {df.season.min()}-{df.season.max()}")
 
 # %%
-# 2010 kesme noktasi: oncesinde puanlama sistemi ve teknik kurallar cok farkli,
-# eski sezonlar modele gurultu katiyor.
+# 2010 kesme noktası: öncesinde puanlama sistemi ve teknik kurallar çok farklı,
+# eski sezonlar modele gürültü katıyor.
 df = df[df["season"] >= 2010].reset_index(drop=True)
 print(f"2010+ : {len(df)} satir")
 

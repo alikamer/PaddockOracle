@@ -3,9 +3,9 @@
 ################################################
 
 # 1. Veriyi okuma
-# 2. Modele girecek sutunlarin secimi
-# 3. Kategorik sutunun sayiya cevrilmesi
-# 4. Kronolojik ayirma (train / test)
+# 2. Modele girecek sütunların seçimi
+# 3. Kategorik sütunun sayıya çevrilmesi
+# 4. Kronolojik ayırma (train / test)
 # 5. Base Models
 # 6. Hyperparameter Optimization
 # 7. Feature Importance
@@ -50,10 +50,10 @@ df.columns
 # Bu sütunlar yarış bittikten sonra öğrenilen bilgileri taşır, bırakırsak model ezber yapar.
 leak_cols = ["position", "position_text", "points", "laps", "status"]
 
-# Kimlik sutunlari -  işlevsizler, modelin görmesi gereksiz.
+# Kimlik sütunları -  işlevsizler, modelin görmesi gereksiz.
 id_cols = ["driver_id", "constructor_id", "circuit_id", "race_name", "date"]
 
-# Sezon numarasi bir ozellik degil, sadece ayirma icin lazim
+# Sezon numarası bir özellik değil, sadece ayırma için lazım
 drop_cols = leak_cols + id_cols + ["season", "is_podium"]
 
 y = df["is_podium"]
@@ -80,7 +80,7 @@ X.shape
 X.head()
 
 ################################################
-# 4. Kronolojik ayirma (train / test)
+# 4. Kronolojik ayırma (train / test)
 ################################################
 
 # HOLDOUT yaptığımız kısım

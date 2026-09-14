@@ -84,8 +84,8 @@ def main():
     df = pd.read_csv("data/data_processed/results_2010_2025_features.csv")
     X, y = f1_data_prep(df)
 
-    # Final model tüm veriyle (2010-2025) eğitiliyor: train/test ayrımı sadece
-    # 5.1_research.py'daki performans doğrulaması içindi, o iş bitti.
+    # Final model tüm veriyle (2010-2025) eğitiliyor; train/test ayrımı
+    # 5.1_research.py'daki performans doğrulamasına aitti.
     tscv = TimeSeriesSplit(n_splits=5)
 
     base_models(X, y, cv=tscv)

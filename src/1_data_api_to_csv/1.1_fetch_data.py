@@ -21,7 +21,7 @@ def fetch_page(season: int, offset: int) -> dict:
     for attempt in range(1, MAX_RETRIES + 1):
         response = requests.get(url, params=params, timeout=30)
 
-        # 429 = cok fazla istek. Her denemede bekleme suresi artiyor.
+        # 429 = çok fazla istek. Her denemede bekleme süresi artıyor.
         if response.status_code == 429:
             wait_time = REQUEST_DELAY_SECONDS * attempt
             print(f"  429 alindi, {wait_time} sn beklenecek (deneme {attempt}/{MAX_RETRIES})")
@@ -39,8 +39,8 @@ def fetch_season_results(season: int) -> list[dict]:
     all_races = []
     offset = 0
 
-    # Sezonun kac sayfa oldugu onceden bilinmiyor; API'nin dondugu "total"
-    # degerine ulasinca duruyoruz.
+    # Sezonun kaç sayfa olduğu önceden bilinmiyor; API'nin döndüğü "total"
+    # değerine ulaşınca duruyoruz.
     while True:
         payload = fetch_page(season, offset)
         mrdata = payload["MRData"]
@@ -71,8 +71,8 @@ def flatten_races_to_rows(races: list[dict]) -> list[dict]:
                     "driver_id": result["Driver"]["driverId"],
                     "constructor_id": result["Constructor"]["constructorId"],
                     "grid": result["grid"],
-                    # position, yarisi bitiremeyenlerde hic gelmeyebiliyor:
-                    # [] yerine .get() kullanmazsak KeyError aliriz.
+                    # position, yarışı bitiremeyenlerde hiç gelmeyebiliyor:
+                    # [] yerine .get() kullanmazsak KeyError alırız.
                     "position": result.get("position"),
                     "position_text": result.get("positionText"),
                     "points": result["points"],

@@ -13,9 +13,9 @@ print(f"Girdi: {len(df)} satir")
 
 
 # %%
-# Start almamis pilotlar. Iki kosul birlikte aranmali: tek basina
-# status == "Withdrew" yarisi kosup sonra cekilenleri de yakaliyor,
-# tek basina laps == 0 ise 1. turda kaza yapip cikanlari yakaliyor.
+# Start almamış pilotlar. İki koşul birlikte aranmalı: tek başına
+# status == "Withdrew" yarışı koşup sonra çekilenleri de yakalıyor,
+# tek başına laps == 0 ise 1. turda kaza yapıp çıkanları yakalıyor.
 
 
 no_start = (df["laps"] == 0) & (df["position_text"] == "W")
@@ -30,8 +30,8 @@ print(f"Start almamis satirlar silindi: {no_start.sum()}")
 
 
 # %%
-# grid == 0 = pit lane start. Sifir sayisal olarak pole'dan iyi gorunuyor,
-# oysa gridin en gerisi: o yaristaki en yuksek grid degerinin arkasina diziliyor.
+# grid == 0 = pit lane start. Sıfır sayısal olarak pole'dan iyi görünüyor,
+# oysa gridin en gerisi: o yarıştaki en yüksek grid değerinin arkasına diziliyor.
 grid_zero = df["grid"] == 0
 max_grid = df.set_index(["season", "round"]).index.map(
     df[~grid_zero].groupby(["season", "round"])["grid"].max()
