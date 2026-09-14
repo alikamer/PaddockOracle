@@ -2,8 +2,6 @@
 # PaddockOracle - Streamlit arayüzü
 ################################################
 
-# 2010-2025 eğitim verisive 2026 - modelin görmediği sezon.
-
 import joblib
 import pandas as pd
 import streamlit as st
@@ -12,6 +10,8 @@ from sklearn.metrics import roc_auc_score
 from src.utils import f1_data_prep
 
 st.set_page_config(page_title="PaddockOracle", page_icon="🏁", layout="wide")
+
+TABLO_YUKSEKLIGI = 420
 
 
 st.markdown("""
@@ -22,7 +22,14 @@ st.markdown("""
     [data-testid="stMetricLabel"] {font-size: .72rem; text-transform: uppercase;
                                    letter-spacing: .07em; opacity: .6;}
     [data-testid="stMetricDelta"] {font-size: .78rem;}
-    .stTabs [data-baseweb="tab"] {padding: .6rem 1.1rem;}
+    [data-testid="stTab"] {height: auto !important;
+                           padding: .85rem 1.75rem !important;
+                           border-radius: .5rem .5rem 0 0;}
+    [data-testid="stTab"] p {font-size: 1.1rem !important;
+                             font-weight: 600 !important;}
+    [data-testid="stTab"]:hover {background: rgba(250, 250, 250, .05);}
+    [data-testid="stTab"][aria-selected="true"] {background: rgba(250, 250, 250, .08);}
+    [data-testid="stTabPanel"] {padding-top: 1.4rem;}
 </style>
 """, unsafe_allow_html=True)
 
@@ -30,24 +37,15 @@ st.markdown("""
 ################################################
 # Modeli yükleme
 ################################################
-#cache almak önemli
+
 @st.cache_resource
 def load_model():
-    """Model ayrı fonksiyonda: cache_resource pickle'ı hash'lemeye çalışmaz."""
     return joblib.load("models/f1_model.pkl")
 
 
 @st.cache_data
 def load_predictions():
-    """Veriyi yükler, tüm satırlar için podyum olasılığını hesaplar.
-
-    Olasılıklar baştan tek seferde hesaplanıyor; sayfada yarış değiştikçe
-    model yeniden çalışmıyor, sadece satır filtreleniyor.
-    """
     df = pd.read_csv("data/data_processed/results_2010_2025_features.csv")
-
-    # Encoding tüm veri üzerinde yapılıyor - tek yarışı ayırıp encode etseydik
-    # o yarışta olmayan takımların sütunları eksik çıkardı.
     X, _ = f1_data_prep(df)
     df["podium_prob"] = load_model().predict_proba(X)[:, 1]
     return df
@@ -55,14 +53,9 @@ def load_predictions():
 
 @st.cache_data
 def load_2026():
-    """Modelin hiç görmediği 2026 sezonu. Eğitim verisine karışmasın diye
-    ayrı dosyada duruyor; olasılıklar burada hesaplanıyor.
-    """
     new = pd.read_csv("data/data_processed/results_2026_features.csv")
     old = pd.read_csv("data/data_processed/results_2010_2025_features.csv")
 
-    # Encoding ikisi birlikteyken yapılıyor: 2026'da yeni takım varsa
-    # (cadillac gibi) sütun düzeni bozulmasın diye sonra hizalıyoruz.
     both = pd.concat([old, new], ignore_index=True)
     X, _ = f1_data_prep(both)
     X = X.reindex(columns=load_model().feature_names_in_, fill_value=0)
@@ -74,9 +67,7 @@ def load_2026():
 
 @st.cache_data
 def load_calendar():
-    """2026 takvimi: koşulmuş ve koşulmamış bütün yarışlar."""
     return pd.read_csv("data/data_processed/calendar_2026.csv")
-
 
 
 def race_table(df, season, round_):
@@ -86,7 +77,6 @@ def race_table(df, season, round_):
 
 
 def overall_hit_rate(df):
-    """Tüm yarışlarda modelin ilk 3 tahmininden kaçı gerçekten podyuma çıktı."""
     hits, total = 0, 0
     for _, race in df.groupby(["season", "round"]):
         predicted = set(race.nlargest(3, "podium_prob")["driver_id"])
@@ -97,15 +87,6 @@ def overall_hit_rate(df):
 
 
 def predict_race(df, model, race_rows, circuit):
-    """Bir yarışın tüm satırları için podyum olasılığı hesaplar.
-
-    race_rows: driver_id / team_unified / grid sütunları olan tablo.
-    Türetilmiş özellikleri (form, dnf_rate, kariyer) kullanıcı giremez;
-    her pilotun kendi geçmişinden dolduruluyor - kullanıcı sadece
-    takım ve grid veriyor.
-    """
-    # Modelin hiç tanımadığı bir pilot gelirse (örneğin 2026'nın çaylakları)
-    # taban alacağımız değerler: ilk 20 yarışındaki pilotların medyanı.
     rookie = df[df["career_races"] <= 20]
     derived = ["rolling_form", "season_points", "team_form", "circuit_history",
                "teammate_delta", "dnf_rate", "grid_gain"]
@@ -116,8 +97,6 @@ def predict_race(df, model, race_rows, circuit):
         if len(d):
             row = d.iloc[-1].copy()
         else:
-            # Çaylak: geçmişi yok. Sütun düzenini korumak için herhangi bir
-            # satırı taban alıp türetilmiş değerleri çaylak medyanıyla yazıyoruz.
             row = df.iloc[-1].copy()
             for c in derived:
                 row[c] = rookie[c].median()
@@ -128,12 +107,10 @@ def predict_race(df, model, race_rows, circuit):
         row["circuit_id"] = circuit
         row["grid"] = r.grid
 
-        # Pilot bu pistte yarıştıysa oradaki ortalaması geçerli olsun
         past = df[(df["driver_id"] == r.driver_id) & (df["circuit_id"] == circuit)]
         if len(past):
             row["circuit_history"] = past["position"].mean()
 
-        # Seçilen takımın en güncel formu
         team_rows = df[df["team_unified"] == r.team_unified].sort_values(["season", "round"])
         if len(team_rows):
             row["team_form"] = team_rows.iloc[-1]["team_form"]
@@ -142,13 +119,10 @@ def predict_race(df, model, race_rows, circuit):
 
     new = pd.DataFrame(rows)
 
-
     tmp = pd.concat([df, new], ignore_index=True)
     tmp = tmp.drop(columns=["podium_prob"], errors="ignore")
     X, _ = f1_data_prep(tmp)
 
-    # Sütun düzeni eğitimdekiyle eşitleniyor: modelin tanımadığı takım
-    # sütunları (cadillac gibi) düşüyor, eksik kalanlar 0 oluyor.
     X = X.reindex(columns=model.feature_names_in_, fill_value=0)
     probs = model.predict_proba(X.iloc[-len(new):])[:, 1]
 
@@ -173,7 +147,7 @@ with tab1:
     hits, total = overall_hit_rate(df)
     races = df[["season", "round"]].drop_duplicates().shape[0]
 
-    col1, col2, col3, col4 = st.columns(4)
+    col1, col2, col3, col4 = st.columns([1, 1, 2.2, 1.6])
     col1.metric("Rows", f"{len(df):,}")
     col2.metric("Races", races)
     col3.metric("Model", "Voting · LR·RF·CatBoost")
@@ -181,7 +155,6 @@ with tab1:
 
     st.divider()
 
-    # --- Yarış seçimi ---
     with st.sidebar:
         st.header("Select race")
         season = st.selectbox("Season", sorted(df["season"].unique(), reverse=True))
@@ -218,7 +191,6 @@ with tab1:
 
     st.divider()
 
-    # --- Detay ---
     st.markdown("**All drivers** · ranked by predicted probability")
     table = race.rename(columns={"driver_id": "Driver", "team_unified": "Team",
                                  "grid": "Grid", "position": "Finish",
@@ -253,7 +225,6 @@ with tab2:
 
     st.divider()
 
-    # --- Yarış seçimi: takvimin tamamı, koşulmayanlar dahil ---
     labels = {r.round: f"{'●' if r.done else '○'}  {r.race_name}"
               for r in calendar.itertuples()}
     sel = st.selectbox("Grand Prix", calendar["round"], format_func=lambda r: labels[r],
@@ -261,9 +232,9 @@ with tab2:
 
     row = calendar[calendar["round"] == sel].iloc[0]
     st.subheader(f"{row.race_name}")
-    st.caption(f"{row.date} · {row.circuit_id} · round {row.round}")
+    st.caption(f"{row['date']} · {row['circuit_id']} · round {row['round']}")
 
-    if row.done:
+    if row["done"]:
         race26 = (new26[new26["round"] == sel]
                   .sort_values("podium_prob", ascending=False))
         pred = race26.head(3)
@@ -296,8 +267,6 @@ with tab2:
                 "Probability", format="%.2f", min_value=0.0, max_value=1.0)})
 
     else:
-        # Yarış koşulmadı, dolayısıyla grid yok - grid sıralama turunun
-        # sonucu. Elle girilen grid üzerinden tahmin alınıyor.
         st.info("Not raced yet. The starting grid is set in qualifying — "
                 "fill it in below and the model will predict the podium.")
 
@@ -308,12 +277,14 @@ with tab2:
                   .reset_index(drop=True))
         st.caption(f"Pre-filled with the line-up from round {last_round}, the most recent race.")
 
+        podyum_yeri = st.container()
+
         edit26, res26 = st.columns([1, 1])
         with edit26:
             st.markdown("**Starting grid** · editable")
             edited26 = st.data_editor(
                 taslak, hide_index=True, width="stretch", num_rows="dynamic",
-                key="editor_2026",
+                height=TABLO_YUKSEKLIGI, key="editor_2026",
                 column_config={
                     "driver_id": st.column_config.SelectboxColumn(
                         "Driver", options=sorted(new26["driver_id"].unique()), required=True),
@@ -323,24 +294,25 @@ with tab2:
                         "Grid", min_value=1, max_value=22, step=1),
                 })
 
-        with res26:
-            clean26 = edited26.dropna(subset=["driver_id", "team_unified", "grid"])
-            if len(clean26) < 3:
-                st.info("At least 3 drivers are needed to predict.")
-            else:
-                # Geçmiş = 2010-2025 + koşulmuş 2026 yarışları, böylece
-                # pilot formu en güncel haliyle geliyor.
-                gecmis = pd.concat([df, new26], ignore_index=True)
-                sonuc = predict_race(gecmis, load_model(), clean26, row.circuit_id)
+        clean26 = edited26.dropna(subset=["driver_id", "team_unified", "grid"])
 
+        if len(clean26) < 3:
+            podyum_yeri.info("At least 3 drivers are needed to predict.")
+        else:
+            gecmis = pd.concat([df, new26], ignore_index=True)
+            sonuc = predict_race(gecmis, load_model(), clean26, row["circuit_id"])
+
+            with podyum_yeri:
                 st.markdown("**Predicted podium**")
                 for i, r in enumerate(sonuc.head(3).itertuples(), start=1):
                     st.markdown(f"{i}. **{r.driver_id}** · {r.team_unified} · "
                                 f"from P{int(r.grid)} &nbsp;&nbsp;{100 * r.podium_prob:.0f}%")
 
+            with res26:
+                st.markdown("**All drivers** · ranked by predicted probability")
                 st.dataframe(
                     sonuc.rename(columns={"driver_id": "Driver", "team_unified": "Team",
                                           "grid": "Grid", "podium_prob": "Probability"}),
-                    hide_index=True, width="stretch",
+                    hide_index=True, width="stretch", height=TABLO_YUKSEKLIGI,
                     column_config={"Probability": st.column_config.ProgressColumn(
                         "Probability", format="%.2f", min_value=0.0, max_value=1.0)})

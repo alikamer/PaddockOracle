@@ -18,7 +18,6 @@ df.groupby('driver_id')['position'].transform(lambda s: s.shift(1).rolling(3).me
 
 # %%
 # Yardımcı fonksiyonlar — her yeni feature'dan sonra çağrılır.
-# Hesap yapan fonksiyonlar değil, sadece bakış/doğrulama araçları.
 
 sns.set_theme(style="whitegrid")  # seaborn'un hazır teması: silik ızgara, ince çerçeve
 
@@ -121,7 +120,6 @@ def driver_timeline(dataframe, driver_id, cols):
 # %%
 # Takım ismi birleştirme (toro_rosso->alphatauri->rb gibi zincirler)
 
-#Burada ufak bir sorunumuz var düzeltmemiz gerekmekte
 #constructor_id isimli sütunda takımın marka bilgisi tutulmakta, fakat yıllar içerisinde bazı takımlar bazı sebeplerden(satılma,sponsor vs) ötürü isim değiştirmiş oysa ki takım aynı takım
 #Bu noktada  takım isimlerini birleştirmemiz gerekiyor
 '''
